@@ -44,19 +44,21 @@ public class SetExpFix
 		return getExpAtLevel(player.getLevel());
 	}
 
-	public static int getExpAtLevel(final int level)
+	//new Exp Math from 1.8
+	public  static  int getExpAtLevel(final int level)
 	{
-		if (level > 29)
+		if (level <= 15)
 		{
-			return 62 + (level - 30) * 7;
+			return (2*level) + 7;
 		}
-		if (level > 15)
+		if ((level >= 16) && (level <=30))
 		{
-			return 17 + (level - 15) * 3;
+			return (5 * level) -38;
 		}
-		return 17;
+		return (9*level)-158;
+
 	}
-	
+
 	public static int getExpToLevel(final int level)
 	{
 		int currentLevel = 0;
